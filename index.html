@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Domaci-2</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./style.css" rel="stylesheet">
+</head>
+
+<body>
+  <button type="button" class="btn btn btn-success  position-absolute top-0 end-0  m-1" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">
+    Dodaj novi film
+  </button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Dodaj novi film</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="movie_form" onsubmit="getMovies(); return false">
+            <div class="form-group">
+              <label for="inputName">Naziv</label>
+              <input type="text" class="form-control mt-3" id="movie_name" placeholder="Unesite naziv" required>
+            </div>
+            <div class="form-group">
+              <label for="inputYear" class="mt-3">Godina</label>
+              <input type="number" class="form-control mt-3" id="movie_year" min="1930" max="2021" 
+                placeholder="Unesite godinu">
+            </div>
+            <div class="form-group">
+              <label for="inputCountry" class="mt-3">Drzava</label>
+              <input type="text" class="form-control mt-3" id="movie_country" placeholder="Unesite državu">
+            </div>
+            <div class="form-group">
+              <label for="inputNote" class="mt-3">Napomena</label>
+              <input type="text" class="form-control mt-3" id="movie_remark" placeholder="Unesite Napomenu">
+            </div>
+            <div class="form-group">
+              <label for="inputActors" class="mt-3">Glumci</label>
+              <input type="text" class="form-control mt-3" id="movie_actors" placeholder="Unesite glumce" required>
+             
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success mt-5 text-center">Submit</button>
+            </div>
+          
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table  table-bordered mt-5 text-center">
+          <thead class="light  table-bordered border-white">
+            <tr>
+              <td>
+                <h5>Odgledan</h5>
+              </td>
+              <td>
+                <h5>Naziv</h5>
+              </td>
+              <td>
+                <h5>Godina</h5>
+              </td>
+              <td>
+                <h5>Drzava</h5>
+              </td>
+              <td>
+                <h5>Napomena</h5>
+              </td>
+              <td>
+                <h5>Glumci</h5>
+              </td>
+
+            </tr>
+          </thead>
+          <tbody id="table_body">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./app.js"></script>
+
+</html>
